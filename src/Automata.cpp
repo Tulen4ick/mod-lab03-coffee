@@ -6,7 +6,8 @@
 
 Coffee_machine::Coffee_machine() {
     state = State::off;
-    admin_password = "12345678";
+    current_cash = 0;
+    earned_cash = 0;
 }
 
 std::string Coffee_machine::AddPosition(const std::string name,
@@ -57,7 +58,7 @@ std::map<std::string, unsigned int> Coffee_machine::GetMenu() {
 
 std::string Coffee_machine::Choice(const std::string name) {
     if (state == State::wait) {
-        if (name == admin_password) {
+        if (name == adminPassword) {
             state == State::admin;
             return "You have switched to the administrator mode";
         }

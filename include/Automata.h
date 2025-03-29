@@ -7,6 +7,8 @@
 #include <map>
 #include <utility>
 
+const std::string adminPassword = "12345678";
+
 enum class State { off, wait, check, cook, admin };
 
 std::map<State, std::string> StateToString = {
@@ -38,7 +40,6 @@ class Coffee_machine {
     int current_cash;
     int earned_cash;
     std::string selected_drink;
-    std::string admin_password;
     int Finish();
 };
 #endif // INCLUDE_AUTOMATA_H_
