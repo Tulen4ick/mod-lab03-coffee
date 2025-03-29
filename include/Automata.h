@@ -7,7 +7,7 @@
 #include <map>
 #include <utility>
 
-const std::string adminPassword = "12345678";
+const char adminPassword[] = "12345678";
 
 enum class State { off, wait, check, cook, admin };
 
