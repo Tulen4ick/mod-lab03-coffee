@@ -1,6 +1,6 @@
 // Copyright 2022 UNN-IASR
-#define INCLUDE_AUTOMATA_H_
 #ifdef INCLUDE_AUTOMATA_H_
+#define INCLUDE_AUTOMATA_H_
 #include <string>
 #include <vector>
 #include <iostream>
