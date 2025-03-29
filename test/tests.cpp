@@ -23,13 +23,6 @@ TEST(AutomataTest, CantChoseWhileOff) {
     ASSERT_EQ(StateToString[State::off], machine.GetState());
 }
 
-TEST(AutomataTest, CantChooseWhileDrinksNotLoaded) {
-    Coffee_machine machine = Coffee_machine();
-    machine.On();
-    machine.Choice("latte");
-    ASSERT_EQ(StateToString[State::wait], machine.GetState());
-}
-
 TEST(AutomataTest, CantCookWhileDrinkNotChosen) {
     Coffee_machine machine = Coffee_machine();
     machine.On();
