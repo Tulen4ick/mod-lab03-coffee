@@ -6,7 +6,8 @@ Coffee_machine::Coffee_machine() {
     admin_password = "12345678";
 }
 
-std::string Coffee_machine::AddPosition(const std::string name, const unsigned int price) {
+std::string Coffee_machine::AddPosition(const std::string name,
+     const unsigned int price) {
     if (state == State::admin) {
         if (menu.count(name) <= 0) {
             menu.insert({name, price});
@@ -23,7 +24,8 @@ std::string Coffee_machine::DeletePosition(const std::string name) {
     if (state == State::admin) {
         if (menu.count(name) > 0) {
             menu.erase(name);
-            return "The product was successfully removed from the vending machine";
+            return 
+            "The product was successfully removed from the vending machine";
         } else {
             return "There is no such drink in the vending machine!";
         }
@@ -104,9 +106,15 @@ std::pair<std::string, unsigned int> Coffee_machine::Ready_to_cook() {
         if (current_cash >= menu[selected_drink]) {
             state = State::cook;
             int change = Finish();
-            return std::make_pair("The drink has been successfully prepared, get your change", change);
+            return std::make_pair(
+                "The drink has been successfully prepared, get your change",
+                 change);
         } else {
-            return std::make_pair(std::string("You have not deposited enough funds, deposit another $") + std::to_string(menu[selected_drink] - current_cash) + std::string("units of currency"), 0);
+            return std::make_pair(
+                std::string(
+                    "You have not deposited enough funds, deposit another $")
+                 + std::to_string(menu[selected_drink] - current_cash)
+                  + std::string("units of currency"), 0);
         }
     } else {
         return std::make_pair("The drink has not been selected yet", 0);

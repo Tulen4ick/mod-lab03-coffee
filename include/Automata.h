@@ -1,14 +1,15 @@
 // Copyright 2022 UNN-IASR
-#define INCLUDE_COFFEE_H_
-#ifdef INCLUDE_COFFEE_H_
+#define INCLUDE_AUTOMATA_H_
+#ifdef INCLUDE_AUTOMATA_H_
 #include <string>
 #include <vector>
 #include <iostream>
 #include <map>
+#include <utility>
 
 enum class State { off, wait, check, cook, admin };
 
-std::map<State, std::string> StateToString = { 
+std::map<State, std::string> StateToString = {
     {State::off, "off"},
     {State::wait, "wait"},
     {State::check, "check"},
@@ -40,4 +41,5 @@ class Coffee_machine {
     std::string admin_password;
     int Finish();
 };
-#endif // INCLUDE_COFFEE_H_
+#endif
+// INCLUDE_COFFEE_H_
