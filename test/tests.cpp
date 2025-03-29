@@ -2,6 +2,8 @@
 
 #include <gtest/gtest.h>
 #include "Automata.h"
+#include <string>
+#include <utility>
 
 TEST(AutomataTest, InitialStateOFF) {
     Coffee_machine machine = Coffee_machine();
@@ -127,5 +129,7 @@ TEST(AutomataTest, SuccessfullyPreparedDrink) {
     machine.Choice("latte");
     machine.Coin(130);
     std::pair<std::string, unsigned int> answer = machine.Ready_to_cook();
-    ASSERT_EQ(std::make_pair("The drink has been successfully prepared, get your change", 10), answer);
+    ASSERT_EQ(std::make_pair(
+        "The drink has been successfully prepared, get your change",
+         10), answer);
 }

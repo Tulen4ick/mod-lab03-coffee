@@ -1,5 +1,8 @@
 // Copyright 2022 UNN-IASR
 #include "Automata.h"
+#include <map>
+#include <utility>
+#include <string>
 
 Coffee_machine::Coffee_machine() {
     state = State::off;
@@ -24,7 +27,7 @@ std::string Coffee_machine::DeletePosition(const std::string name) {
     if (state == State::admin) {
         if (menu.count(name) > 0) {
             menu.erase(name);
-            return 
+            return
             "The product was successfully removed from the vending machine";
         } else {
             return "There is no such drink in the vending machine!";
