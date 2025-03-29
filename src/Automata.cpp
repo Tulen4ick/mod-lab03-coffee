@@ -59,7 +59,7 @@ std::map<std::string, unsigned int> Coffee_machine::GetMenu() {
 std::string Coffee_machine::Choice(const std::string name) {
     if (state == State::wait) {
         if (name == std::string(adminPassword)) {
-            state == State::admin;
+            state = State::admin;
             return "You have switched to the administrator mode";
         }
         if (menu.count(name) > 0) {
