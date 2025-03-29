@@ -41,4 +41,4 @@ class Coffee_machine {
     std::string admin_password;
     int Finish();
 };
-#endif // INCLUDE_COFFEE_H_
+#endif // INCLUDE_AUTOMATA_H_
